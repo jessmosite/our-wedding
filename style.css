@@ -1,0 +1,673 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+/* --- RUSTIC & BOHO DESIGN SYSTEM --- */
+:root {
+    /* Color Palette */
+    --color-primary: #5F6F52;       /* Sage Green */
+    --color-primary-light: #A3B19B; /* Soft Sage */
+    --color-secondary: #B06145;     /* Warm Terracotta */
+    --color-secondary-light: #C68B59;/* Clay / Peach sand */
+    --color-bg-base: #F9F6F0;       /* Light Linen Ecru */
+    --color-bg-card: rgba(255, 255, 255, 0.85); /* Premium Glassmorphic Cream */
+    --color-bg-alt: #EFEBE3;        /* Slightly darker linen */
+    --color-text-main: #3A3F35;     /* Dark Olive / Off-Black */
+    --color-text-muted: #707A6E;    /* Soft Sage Charcoal */
+    --color-accent: #D4AF37;        /* Soft Champagne Gold */
+
+    /* Typography */
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+
+    /* Transitions & Shadows */
+    --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    --shadow-soft: 0 10px 30px rgba(95, 111, 82, 0.08);
+    --shadow-hover: 0 20px 40px rgba(95, 111, 82, 0.15);
+    
+    /* Layout */
+    --border-radius-lg: 24px;
+    --border-radius-md: 12px;
+}
+
+/* --- CSS Reset & Base Styles --- */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    background-color: var(--color-bg-base);
+    color: var(--color-text-main);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    overflow-x: hidden;
+    position: relative;
+    line-height: 1.6;
+}
+
+/* --- Background Accents --- */
+.boho-bg-leaves {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.boho-leaf {
+    position: absolute;
+    opacity: 0.04;
+    transform: rotate(15deg);
+}
+
+.boho-leaf-1 {
+    top: 5%;
+    left: -5%;
+    width: 300px;
+    height: 300px;
+}
+
+.boho-leaf-2 {
+    top: 45%;
+    right: -8%;
+    width: 350px;
+    height: 350px;
+    transform: rotate(-45deg);
+}
+
+.boho-leaf-3 {
+    bottom: 5%;
+    left: -10%;
+    width: 400px;
+    height: 400px;
+}
+
+/* --- Common Typography & Elements --- */
+h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+}
+
+p {
+    font-weight: 300;
+    letter-spacing: 0.01em;
+}
+
+.section-title {
+    font-size: 3rem;
+    text-align: center;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+    position: relative;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    text-align: center;
+    color: var(--color-secondary);
+    font-family: var(--font-display);
+    font-style: italic;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+}
+
+/* Organic Divider */
+.organic-divider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem auto;
+    color: var(--color-primary-light);
+    opacity: 0.6;
+    max-width: 150px;
+}
+
+.organic-divider svg {
+    width: 100%;
+    height: auto;
+}
+
+/* --- Hero Section --- */
+.hero {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+    background: radial-gradient(circle at 50% 50%, rgba(250, 247, 240, 0.3) 0%, rgba(249, 246, 240, 0.95) 100%);
+}
+
+.hero-content {
+    max-width: 800px;
+    z-index: 2;
+    animation: fadeIn 1.8s ease-out;
+}
+
+.hero-monogram {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    color: var(--color-secondary);
+    letter-spacing: 0.15em;
+    text-indent: 0.15em; /* Offsets trailing letter-spacing to ensure absolute visual centering */
+    margin-bottom: 2rem;
+    border: 1px solid rgba(176, 97, 69, 0.2);
+    padding: 0.5rem 1.8rem;
+    display: inline-block;
+    border-radius: 50px;
+    background: var(--color-bg-card);
+    backdrop-filter: blur(5px);
+}
+
+.hero-names {
+    font-size: 5rem;
+    color: var(--color-primary);
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+    flex-wrap: wrap; /* Elegant flow on extremely narrow mobile viewports */
+}
+
+.hero-ampersand {
+    font-family: var(--font-display);
+    font-style: italic;
+    color: var(--color-secondary);
+    font-size: 4.2rem;
+    display: inline-block;
+    margin: 0 0.1rem;
+    position: relative;
+    top: -0.1rem; /* Marginally adjust visual baseline of the italic ampersand */
+}
+
+.hero-details {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    letter-spacing: 0.1em;
+    color: var(--color-text-main);
+    margin-top: 1rem;
+    text-transform: uppercase;
+}
+
+.hero-venue {
+    font-size: 1rem;
+    letter-spacing: 0.2em;
+    color: var(--color-text-muted);
+    margin-top: 0.5rem;
+    text-transform: uppercase;
+}
+
+/* Scroll Indicator Guide */
+.hero-scroll-indicator {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    text-decoration: none;
+    color: var(--color-secondary);
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 0.95rem;
+    letter-spacing: 0.1em;
+    z-index: 5;
+    transition: var(--transition-smooth);
+    animation: scrollBob 2s infinite ease-in-out;
+}
+
+.hero-scroll-indicator:hover {
+    color: var(--color-primary);
+}
+
+.hero-scroll-indicator svg {
+    width: 20px;
+    height: 20px;
+}
+
+@keyframes scrollBob {
+    0%, 100% {
+        transform: translate(-50%, 0);
+    }
+    50% {
+        transform: translate(-50%, 8px);
+    }
+}
+
+/* --- Countdown Timer --- */
+.countdown-container {
+    margin-top: 3.5rem;
+    background: var(--color-bg-card);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: var(--border-radius-lg);
+    padding: 2rem 3rem;
+    box-shadow: var(--shadow-soft);
+    display: inline-flex;
+    gap: 2.5rem;
+    z-index: 2;
+    transition: var(--transition-smooth);
+}
+
+.countdown-container:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-4px);
+}
+
+.countdown-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 70px;
+}
+
+.countdown-val {
+    font-family: var(--font-display);
+    font-size: 2.8rem;
+    font-weight: 300;
+    color: var(--color-primary);
+    line-height: 1;
+}
+
+.countdown-lbl {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-secondary);
+    margin-top: 0.5rem;
+}
+
+.countdown-sep {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    color: var(--color-primary-light);
+    display: flex;
+    align-items: center;
+    opacity: 0.5;
+}
+
+/* --- Sections --- */
+section {
+    padding: 6rem 2rem;
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+/* --- Premium Info Card --- */
+.boho-card {
+    background: var(--color-bg-card);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: var(--border-radius-lg);
+    padding: 3rem 2.5rem;
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition-smooth);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.boho-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-primary-light), var(--color-secondary-light));
+    opacity: 0.8;
+}
+
+.boho-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+}
+
+.card-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--color-bg-alt);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    color: var(--color-secondary);
+}
+
+.card-icon svg {
+    width: 28px;
+    height: 28px;
+}
+
+.card-title {
+    font-size: 1.8rem;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+}
+
+.card-content {
+    color: var(--color-text-main);
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.card-subtext {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    font-style: italic;
+}
+
+/* --- Location & Map Section --- */
+.map-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.map-card {
+    width: 100%;
+    max-width: 900px;
+    background: var(--color-bg-card);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-soft);
+    padding: 1.5rem;
+    overflow: hidden;
+    transition: var(--transition-smooth);
+}
+
+.map-card:hover {
+    box-shadow: var(--shadow-hover);
+}
+
+.map-frame-wrapper {
+    width: 100%;
+    height: 450px;
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    position: relative;
+    border: 1px solid rgba(95, 111, 82, 0.15);
+}
+
+.map-frame-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.map-details {
+    margin-top: 1.5rem;
+    padding: 0 1rem 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.map-address-info h4 {
+    font-size: 1.4rem;
+    color: var(--color-primary);
+}
+
+.map-address-info p {
+    color: var(--color-text-muted);
+    margin-top: 0.25rem;
+}
+
+/* Boho Buttons */
+.btn-boho {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background-color: var(--color-primary);
+    color: #FFF;
+    border: none;
+    padding: 1rem 2rem;
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 0.95rem;
+    letter-spacing: 0.05em;
+    border-radius: 50px;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(95, 111, 82, 0.2);
+    transition: var(--transition-smooth);
+}
+
+.btn-boho:hover {
+    background-color: var(--color-secondary);
+    box-shadow: 0 6px 20px rgba(176, 97, 69, 0.3);
+    transform: translateY(-2px);
+}
+
+.btn-boho svg {
+    width: 20px;
+    height: 20px;
+    transition: var(--transition-smooth);
+}
+
+.btn-boho:hover svg {
+    transform: translateX(3px);
+}
+
+/* --- QR Code Section --- */
+.qr-section {
+    background-color: var(--color-bg-alt);
+    position: relative;
+    border-radius: var(--border-radius-lg);
+    margin: 4rem 2rem;
+    padding: 5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.qr-card {
+    background: var(--color-bg-card);
+    border-radius: var(--border-radius-lg);
+    padding: 3rem 2.5rem;
+    box-shadow: var(--shadow-soft);
+    max-width: 500px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.qr-container {
+    width: 220px;
+    height: 220px;
+    background: #FFF;
+    border-radius: var(--border-radius-md);
+    padding: 1rem;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(95, 111, 82, 0.1);
+}
+
+.qr-container img, .qr-container canvas {
+    max-width: 100%;
+    height: auto;
+}
+
+.qr-description {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    margin-bottom: 2rem;
+    line-height: 1.5;
+}
+
+/* --- Footer --- */
+footer {
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: var(--color-primary);
+    color: rgba(255, 255, 255, 0.8);
+    position: relative;
+}
+
+
+
+.footer-names {
+    font-family: var(--font-display);
+    font-size: 2.2rem;
+    color: #FFF;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+}
+
+.footer-thankyou {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.2rem;
+    color: var(--color-primary-light);
+    margin-bottom: 2.5rem;
+}
+
+/* Back to Top Link */
+.back-to-top-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-primary-light);
+    text-decoration: none;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1rem;
+    margin-bottom: 2.5rem;
+    padding: 0.5rem 1.2rem;
+    border: 1px solid rgba(163, 177, 155, 0.2);
+    border-radius: 30px;
+    transition: var(--transition-smooth);
+}
+
+.back-to-top-link:hover {
+    color: #FFF;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
+}
+
+.back-to-top-link svg {
+    width: 16px;
+    height: 16px;
+    stroke: currentColor;
+    transition: var(--transition-smooth);
+}
+
+.back-to-top-link:hover svg {
+    transform: translateY(-2px);
+}
+
+.footer-credit {
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.4);
+    text-transform: uppercase;
+}
+
+/* --- Animations --- */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    .hero-names {
+        font-size: 3.8rem;
+    }
+    
+    .hero-ampersand {
+        font-size: 2.8rem;
+    }
+    
+    .hero-monogram {
+        font-size: 1.4rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .countdown-container {
+        padding: 1.5rem;
+        gap: 1.2rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .countdown-val {
+        font-size: 2rem;
+    }
+
+    .countdown-lbl {
+        font-size: 0.65rem;
+    }
+    
+    .countdown-sep {
+        display: none;
+    }
+
+    .section-title {
+        font-size: 2.3rem;
+    }
+
+    section {
+        padding: 4rem 1.5rem;
+    }
+
+    .map-frame-wrapper {
+        height: 300px;
+    }
+
+    .map-details {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .btn-boho {
+        width: 100%;
+        justify-content: center;
+    }
+}

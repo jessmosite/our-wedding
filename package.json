@@ -1,0 +1,11 @@
+{
+  "name": "wedding-website",
+  "version": "1.0.0",
+  "description": "A premium, responsive rustic & boho wedding website with dynamic QR and Google Maps.",
+  "scripts": {
+    "dev": "vite"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}

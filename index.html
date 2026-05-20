@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jess & Mo — Our Wedding Ceremony</title>
+    
+    <!-- SEO Optimization -->
+    <meta name="description" content="Join us in celebrating the wedding of Jess & Mo. Find ceremony times, location, maps, directions, and RSVP information here.">
+    <meta name="keywords" content="wedding website, Jess and Mo, wedding invitation, London Zoo wedding, Mappin Pavilion wedding, rustic wedding">
+    
+    <!-- Open Graph (for rich preview when sharing on WhatsApp, iMessage, etc.) -->
+    <meta property="og:title" content="Jess & Mo — Our Wedding">
+    <meta property="og:description" content="We are getting married! Find all the ceremony and venue details here.">
+    <meta property="og:type" content="website">
+    
+    <!-- Styling -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- QR Code Generator Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" integrity="sha512-CNgIRecGo7nOMdBm05JDkwihMJUXhjdpkRyVUybRIQuy2E7CtoN8WZGIWPVCv4C1JcLkPL1SSs4TZEgGoqL3Mw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+
+    <!-- Boho Leaf Background Accents (Self-contained premium SVG illustrations) -->
+    <div class="boho-bg-leaves">
+        <!-- Leaf 1 (Top Left) -->
+        <svg class="boho-leaf boho-leaf-1" viewBox="0 0 100 100" fill="currentColor">
+            <path d="M10,90 Q30,60 50,50 Q70,40 90,10 Q60,30 50,50 Q40,70 10,90 Z" />
+            <path d="M10,90 Q50,50 90,10" stroke="currentColor" stroke-width="0.5" fill="none"/>
+            <path d="M30,70 Q40,65 50,62" stroke="currentColor" stroke-width="0.3" fill="none"/>
+            <path d="M50,50 Q60,45 70,42" stroke="currentColor" stroke-width="0.3" fill="none"/>
+            <path d="M35,65 Q30,55 25,50" stroke="currentColor" stroke-width="0.3" fill="none"/>
+            <path d="M55,45 Q50,35 45,30" stroke="currentColor" stroke-width="0.3" fill="none"/>
+        </svg>
+        
+        <!-- Leaf 2 (Middle Right) -->
+        <svg class="boho-leaf boho-leaf-2" viewBox="0 0 100 100" fill="currentColor">
+            <path d="M10,90 Q35,55 50,50 Q65,45 90,10 Q55,35 50,50 Q45,65 10,90 Z" />
+            <path d="M10,90 Q50,50 90,10" stroke="currentColor" stroke-width="0.5" fill="none"/>
+            <path d="M25,75 C30,70 40,68 45,65" stroke="currentColor" stroke-width="0.3" fill="none"/>
+            <path d="M45,55 C50,50 60,48 65,45" stroke="currentColor" stroke-width="0.3" fill="none"/>
+        </svg>
+
+        <!-- Leaf 3 (Bottom Left) -->
+        <svg class="boho-leaf boho-leaf-3" viewBox="0 0 100 100" fill="currentColor">
+            <path d="M10,90 Q30,60 50,50 Q70,40 90,10 Q60,30 50,50 Q40,70 10,90 Z" />
+            <path d="M10,90 Q50,50 90,10" stroke="currentColor" stroke-width="0.5" fill="none"/>
+        </svg>
+    </div>
+
+    <!-- 1. HERO SECTION -->
+    <header class="hero" id="home">
+        <div class="hero-content">
+            <span class="hero-monogram" id="monogram">J & M</span>
+            <h1 class="hero-names">
+                Jess <span class="hero-ampersand">&</span> Mo
+            </h1>
+            <div class="organic-divider">
+                <!-- Premium Decorative Botanical Line SVG -->
+                <svg viewBox="0 0 100 20" fill="none" stroke="currentColor" stroke-width="1">
+                    <path d="M0,10 Q25,5 50,10 T100,10" />
+                    <circle cx="50" cy="10" r="2" fill="currentColor"/>
+                    <path d="M42,10 Q45,2 47,8" stroke-width="0.8"/>
+                    <path d="M58,10 Q55,18 53,12" stroke-width="0.8"/>
+                </svg>
+            </div>
+            <p class="hero-details">May 8, 2026</p>
+            <p class="hero-venue">Mappin Pavilion, London Zoo • London, UK</p>
+            
+            <!-- Live Countdown Timer -->
+            <div class="countdown-container" id="countdown-widget">
+                <div class="countdown-box">
+                    <span class="countdown-val" id="days">00</span>
+                    <span class="countdown-lbl">Days</span>
+                </div>
+                <div class="countdown-sep">•</div>
+                <div class="countdown-box">
+                    <span class="countdown-val" id="hours">00</span>
+                    <span class="countdown-lbl">Hours</span>
+                </div>
+                <div class="countdown-sep">•</div>
+                <div class="countdown-box">
+                    <span class="countdown-val" id="minutes">00</span>
+                    <span class="countdown-lbl">Minutes</span>
+                </div>
+                <div class="countdown-sep">•</div>
+                <div class="countdown-box">
+                    <span class="countdown-val" id="seconds">00</span>
+                    <span class="countdown-lbl">Seconds</span>
+                </div>
+            </div>
+            
+            <!-- Scroll Down Navigation Guide -->
+            <a href="#details" class="hero-scroll-indicator" aria-label="Scroll to details">
+                <span>Scroll Down</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M7 13l5 5 5-5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 18V6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
+        </div>
+    </header>
+
+    <!-- 2. DETAILS & SCHEDULE SECTION -->
+    <section id="details">
+        <h2 class="section-title">The Wedding Details</h2>
+        <p class="section-subtitle">celebrate with us</p>
+        
+        <div class="card-grid">
+            <!-- Ceremony Card -->
+            <div class="boho-card" id="ceremony-card">
+                <div class="card-icon">
+                    <!-- Standard Clock SVG -->
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <circle cx="12" cy="12" r="10" />
+                        <polyline points="12 6 12 12 16 14" />
+                    </svg>
+                </div>
+                <h3 class="card-title">The Ceremony</h3>
+                <p class="card-content">
+                    Our ceremony will begin promptly at <strong>3:00 PM</strong> in the stone chapel. Please arrive 15-30 minutes early to find your seats and enjoy the prelude music.
+                </p>
+                <span class="card-subtext">Dress Code: Rustic Elegant / Garden Party</span>
+            </div>
+
+            <!-- Reception Card -->
+            <div class="boho-card" id="reception-card">
+                <div class="card-icon">
+                    <!-- Elegant Wine/Toast SVG -->
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M8,22 L16,22" />
+                        <path d="M12,11 L12,22" />
+                        <path d="M17,2 C17,2 17,11 12,11 C7,11 7,2 7,2 Z" />
+                        <line x1="6" y1="6" x2="18" y2="6" />
+                    </svg>
+                </div>
+                <h3 class="card-title">The Celebration</h3>
+                <p class="card-content">
+                    Directly following the ceremony, join us in the main barn for a cocktail hour, dinner, drinks, and plenty of dancing into the starry night!
+                </p>
+                <span class="card-subtext">Carriages at Midnight</span>
+            </div>
+
+            <!-- RSVP Details -->
+            <div class="boho-card" id="rsvp-card">
+                <div class="card-icon">
+                    <!-- Standard Envelope SVG -->
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                        <polyline points="22,6 12,13 2,6" />
+                    </svg>
+                </div>
+                <h3 class="card-title">RSVP</h3>
+                <p class="card-content">
+                    Please kindly respond by <strong>August 1st, 2026</strong>. You can confirm your attendance by clicking the RSVP button below or sending us an email.
+                </p>
+                <a href="mailto:hello@jessandmo.com?subject=Wedding%20RSVP" class="btn-boho" id="rsvp-action-btn">
+                    RSVP via Email
+                    <!-- Right Arrow SVG -->
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12" />
+                        <polyline points="12 5 19 12 12 19" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. VENUE & GOOGLE MAPS SECTION -->
+    <section id="location" class="map-section">
+        <h2 class="section-title">The Venue</h2>
+        <p class="section-subtitle">find your way</p>
+
+        <div class="map-card" id="map-widget">
+            <div class="map-frame-wrapper">
+                <!-- Fully responsive Google Maps Iframe Embed pointing to a beautiful Cotswold Barn venue -->
+                <iframe 
+                    src="https://maps.google.com/maps?q=Mappin%20Pavilion,%20London%20Zoo,%20Regents%20Park,%20London&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Google Maps: Wedding Venue Location">
+                </iframe>
+            </div>
+            
+            <div class="map-details">
+                <div class="map-address-info">
+                    <h4>Mappin Pavilion, London Zoo</h4>
+                    <p>Regent's Park, London, NW1 4RY</p>
+                </div>
+                
+                <!-- Google Maps Directions Link for guests on mobile -->
+                <a href="https://maps.google.com/?q=Mappin+Pavilion+London+Zoo+Regents+Park+London" target="_blank" rel="noopener noreferrer" class="btn-boho" id="get-directions-btn">
+                    Get Directions
+                    <!-- Navigation compass / Map Pin SVG -->
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z" />
+                        <circle cx="12" cy="10" r="3" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. GIFT REGISTRY SECTION -->
+    <section id="registry" class="registry-section">
+        <h2 class="section-title">Gift Registry</h2>
+        <p class="section-subtitle">our new chapter</p>
+        
+        <div class="boho-card" style="max-width: 700px; margin: 0 auto; width: 100%;">
+            <div class="card-icon">
+                <!-- Premium Gift Box SVG -->
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <polyline points="20 12 20 22 4 22 4 12" />
+                    <rect x="2" y="7" width="20" height="5" />
+                    <line x1="12" y1="22" x2="12" y2="7" />
+                    <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z" />
+                    <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z" />
+                </svg>
+            </div>
+            <h3 class="card-title">Registry & Honeymoon Fund</h3>
+            <p class="card-content" style="max-width: 550px; line-height: 1.7; margin-bottom: 2rem;">
+                Your presence on our special day is the greatest gift of all. However, if you would like to help us celebrate with a gift, we have created a registry page on The Knot where you can contribute to our honeymoon fund and future home.
+            </p>
+            <a href="https://www.theknot.com/registry" target="_blank" rel="noopener noreferrer" class="btn-boho" id="view-registry-btn">
+                View Our Registry
+                <!-- External Link SVG -->
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                    <polyline points="15 3 21 3 21 9" />
+                    <line x1="10" y1="14" x2="21" y2="3" />
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- 5. DYNAMIC QR CODE SECTION -->
+    <section id="qr-code">
+        <div class="qr-section">
+            <h2 class="section-title">Scan & Share</h2>
+            <p class="section-subtitle">easy access for guests</p>
+            
+            <div class="qr-card">
+                <!-- Container where QR Code will be rendered dynamically by JavaScript -->
+                <div class="qr-container" id="qrcode"></div>
+                
+                <p class="qr-description">
+                    Guests can scan this QR code on a mobile device to open this website instantly, keeping dates, directions, and RSVPs right in their pocket.
+                </p>
+                
+                <!-- Premium utilities: Download QR for printing on physical stationery/invitations! -->
+                <button class="btn-boho" id="download-qr-btn">
+                    Download QR Code
+                    <!-- Download SVG -->
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                        <polyline points="7 10 12 15 17 10" />
+                        <line x1="12" y1="15" x2="12" y2="3" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. FOOTER -->
+    <footer id="footer">
+        <h3 class="footer-names">Jess & Mo</h3>
+        <p class="footer-thankyou">Thank you for sharing in our love story.</p>
+        
+        <!-- Back to Top Navigation -->
+        <a href="#home" class="back-to-top-link" aria-label="Scroll back to top">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="18 15 12 9 6 15" />
+            </svg>
+            Back to Top
+        </a>
+        
+        <p class="footer-credit">Designed with Love • © 2026</p>
+    </footer>
+
+    <!-- Interactive JS scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
