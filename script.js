@@ -65,20 +65,47 @@ document.addEventListener("DOMContentLoaded", () => {
             correctLevel: QRCode.CorrectLevel.H
         });
 
+        // Toast helper for premium notifications
+        const showToast = (message) => {
+            let toast = document.getElementById("boho-toast");
+            if (!toast) {
+                toast = document.createElement("div");
+                toast.id = "boho-toast";
+                toast.className = "boho-toast";
+                document.body.appendChild(toast);
+            }
+            toast.textContent = message;
+            
+            // Trigger animation
+            setTimeout(() => toast.classList.add("show"), 50);
+            
+            // Hide after 4 seconds
+            setTimeout(() => {
+                toast.classList.remove("show");
+            }, 4000);
+        };
+
         // Set up the download button to grab the generated QR image
         if (downloadBtn) {
             downloadBtn.addEventListener("click", (e) => {
                 e.preventDefault();
                 
-                // The QRCode library creates a canvas element and/or an img element.
-                // We prioritize downloading from the canvas for maximum resolution and reliability.
+                // Mobile OS restriction bypass: 
+                // iOS Safari and some mobile browsers block programmatic anchor downloads of Base64 Data URLs.
+                // We show an elegant toast educating the guest to use native save gestures.
+                const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+                if (isMobile) {
+                    showToast("On mobile? Press and hold the QR code image above to save it directly to your photos! 🤍");
+                    return;
+                }
+
                 const canvas = qrElement.querySelector("canvas");
                 const img = qrElement.querySelector("img");
 
                 let dataUrl = "";
-                if (canvas) {
+                if (canvas && canvas.width > 0) {
                     dataUrl = canvas.toDataURL("image/png");
-                } else if (img && img.src) {
+                } else if (img && img.src && img.src.startsWith("data:")) {
                     dataUrl = img.src;
                 }
 
@@ -90,7 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     link.click();
                     document.body.removeChild(link);
                 } else {
-                    alert("Could not generate download file yet. Please try again in a moment.");
+                    showToast("Generating image, please try again in a second...");
                 }
             });
         }
