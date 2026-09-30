@@ -2,7 +2,7 @@
 
 // 1. CONFIGURATION
 // Easily change your wedding date here (Format: YYYY-MM-DDTHH:MM:SS)
-const WEDDING_DATE = new Date("2026-05-08T15:00:00").getTime();
+const WEDDING_DATE = new Date("2027-05-08T15:00:00").getTime();
 
 document.addEventListener("DOMContentLoaded", () => {
     // 2. LIVE COUNTDOWN TIMER
@@ -148,4 +148,16 @@ document.addEventListener("DOMContentLoaded", () => {
     revealElements.forEach(el => {
         revealOnScroll.observe(el);
     });
+
+    // 5. OBFUSCATED RSVP EMAIL LINK
+    const rsvpBtn = document.getElementById("rsvp-action-btn");
+    if (rsvpBtn) {
+        const decode = (parts) =>
+            decodeURIComponent(escape(window.atob(parts.join(""))));
+
+        const email = decode(["bW9qZXNz", "amFja21hbkBvdXRsb29rLmNvbQ=="]);
+        const subject = decode(["V2VkZGluZyBSU1ZQ"]);
+
+        rsvpBtn.href = "mailto:" + email + "?subject=" + encodeURIComponent(subject);
+    }
 });
